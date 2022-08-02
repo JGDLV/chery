@@ -1,0 +1,43 @@
+-
+  var benefits = {
+    image: 'img/benefits-image.jpg',
+    header: 'наши <br>преимущества',
+    subheader: 'Chery центр авто премиум',
+    text: 'Официальный дилер «Chery Центр Авто Премиум» предлагает выгодные условия на автомобили марки EXEED и предоставляет широкий спектр высококачественных финансовых, технических  и сервисных услуг.',
+    items: [
+      { image: 'img/sprite.svg#benefits-01', text: 'Лучшие цены на новый модельный ряд EXEED' },
+      { image: 'img/sprite.svg#benefits-02', text: 'Бесплатные консультации и тест-драйв' },
+      { image: 'img/sprite.svg#benefits-03', text: 'Акции и специальные предложения' },
+      { image: 'img/sprite.svg#benefits-04', text: 'Кредитование, страхование и Trade-in' },
+      { image: 'img/sprite.svg#benefits-05', text: 'Послепродажная поддержка, гарантия и сервис' },
+    ],
+    props: [
+      { k: 'лет на автомобильном рынке', v: '26' },
+      { k: 'проданных автомобилей', v: '120000' },
+      { k: 'автомобилей в наличии', v: '250' },
+    ]
+  }
+
+.benefits#benefits
+  .benefits__inner
+    .benefits__half.benefits__text-part
+      p.benefits__subheader.subheader !{benefits.subheader}
+      h2.benefits__header !{benefits.header}
+      p.benefits__text !{benefits.text}
+      .benefits-items
+        each item in benefits.items
+          .benefits__item.flex.aic
+            .benefits__item-image-part
+              svg.benefits__item-image
+                use(xlink:href=item.image)
+            .benefits__item-text-part !{item.text}
+    .benefits__half.benefits__image-part
+      img.benefits__image(src=benefits.image, alt="")
+      .benefits-props
+        each prop, index in benefits.props
+          .benefits__prop
+            if index == 2
+              .benefits__prop-value >#[span.counter !{prop.v}]
+            else
+              .benefits__prop-value #[span.counter !{prop.v}]
+            .benefits__prop-key !{prop.k}

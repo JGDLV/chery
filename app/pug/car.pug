@@ -1,0 +1,16 @@
+extends _layout.pug
+
+block variables
+  -
+    var title = 'TXL'
+    var description = ''
+    var index = false
+    var name = 'TXL'
+
+block content
+  include components/intro.pug
+  include components/car-menu.pug
+  include components/car.pug
+  include components/info.pug
+  include components/testdrive.pug
+  include components/gallery.pug

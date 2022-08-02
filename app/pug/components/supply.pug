@@ -1,0 +1,18 @@
+-
+  var supply = {
+    image: 'img/supply-image.jpg',
+    header: 'новая поставка <br>exeed txl',
+    subheader: 'на особых условиях — весь октябрь!',
+    text: 'Только в октябре внедорожник EXEED TXL на особых условиях всего за 2 199 900 ₽! Узнайте подробности у официального дилера.',
+    button: { href: '#', text: 'узнать больше' }
+  }
+
+.supply#supply
+  .supply__inner
+    .supply__half.supply__image-part
+      img.supply__image(src=supply.image, alt="")
+    .supply__half.supply__text-part
+      p.supply__subheader.subheader !{supply.subheader}
+      h2.supply__header !{supply.header}
+      p.supply__text !{supply.text}
+      a.supply__button.btn.btn_light(href=supply.button.href) !{supply.button.text}

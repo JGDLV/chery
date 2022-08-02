@@ -1,0 +1,41 @@
+-
+  var social = [
+    {class: 'instagram', href: 'https://www.instagram.com/exeed_38/', image: 'img/sprite.svg#instagram' },
+    { class: 'vkontakte', href: 'https://vk.com/cheryexeed38', image: 'img/sprite.svg#vkontakte' },
+    { class: 'facebook', href: 'https://www.facebook.com/cheryexeed38', image: 'img/sprite.svg#facebook' },
+    { class: 'youtube', href: 'https://www.youtube.com/channel/UC0Ul-vshP-VWPet5iRzQVsQ', image: 'img/sprite.svg#youtube' },
+  ]
+
+footer.footer
+  .footer__top
+    .container
+      .footer__top-inner.flex
+          include header/logo.pug
+          include header/tagline.pug
+          .menu
+            ul.menu-items.flex
+              each item, index in header.menu
+                li.menu__item
+                  a.menu__link(href=item.href) !{item.text}
+  .footer__middle
+    .container
+      .footer__middle-inner.flex
+        .footer__phone
+            .footer__title Телефон:
+            a.footer__phone-link(href='tel:+' + clearPhone(header.phone)) !{header.phone}
+        .footer__address
+          .footer__title Адрес салона:
+          p.footer__address-text !{header.address}
+        .social
+          .social-items.flex
+            each item in social
+              a.social__item(class='social__item_' + item.class href=item.href target="_blank")
+                svg.social__item-image
+                  use(xlink:href=item.image)
+  .footer__bottom
+    .container
+      .footer__bottom-inner.flex.aic
+        p.copyright © 2021  АО «Чери Автомобили Рус»
+        a.law-info(href='#') Юридическая информация
+        //- .developer Сделано в #[a(href='#') Perx]
+        .developer Сделано в #[a(href='https://1ps.ru' target="_blank") 1PS]

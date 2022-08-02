@@ -1,0 +1,22 @@
+-
+  var instagram = {
+    header: 'мы в instagram',
+    items: [
+      { image: 'img/instagram-01.jpg', href: 'https://www.instagram.com/p/CVIen7MIBzu/' },
+      { image: 'img/instagram-02.jpg', href: 'https://www.instagram.com/p/CU_x-LQIABX/' },
+      { image: 'img/instagram-03.jpg', href: 'https://www.instagram.com/p/CTPrB8lIT3k/' },
+      { image: 'img/instagram-04.jpg', href: 'https://www.instagram.com/p/CR-X-cIoZau/' },
+      { image: 'img/instagram-05.jpg', href: 'https://www.instagram.com/p/CQtQqz-J8Zd/' },
+      { image: 'img/instagram-06.jpg', href: 'https://www.instagram.com/p/CP77-XZJMiH/' },
+      { image: 'img/instagram-07.jpg', href: 'https://www.instagram.com/p/CHDWWLclkhg/' },
+      { image: 'img/instagram-07.jpg', href: 'https://www.instagram.com/p/CHDWWLclkhg/' },
+    ]
+  }
+
+.instagram#instagram
+  .container
+    h2.instagram__header !{instagram.header}
+  .instagram-items
+    each item in instagram.items
+      a.instagram__item(href=item.href target="_blank")
+        img.instagram__item-image(src=item.image, alt="")

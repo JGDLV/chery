@@ -1,0 +1,73 @@
+-
+  var info = [
+    {
+      id: 'design',
+      header: 'Выразительный дизайн',
+      image: 'img/info-01.jpg',
+      items: [
+        { header: 'LED-оптика', text: 'Полностью светодиодная головная оптика обеспечивает безупречное освещение всех участков дороги, делая каждую поездку в темное время суток максимально комфортной и безопасной.' },
+        { header: 'Пульсирующий логотип', text: '' },
+        { header: 'Диски диаметром 19 дюймов', text: '' },
+        { header: 'Стиль и аэродинамика', text: '' },
+        { header: 'Габаритные размеры', text: '' },
+      ]
+    },
+    {
+      id: 'technologies',
+      header: 'Современные технологии',
+      image: 'img/info-02.jpg',
+      items: [
+        { header: 'Широкоформатная мультимедийная панель', text: '' },
+        { header: 'Аудиосистема класса премиум', text: '' },
+        { header: 'Беспроводная зарядка', text: '' },
+        { header: 'Датчик качества воздуха', text: '' },
+        { header: 'Система Старт/Стоп', text: '' },
+      ]
+    },
+    {
+      id: 'comfort',
+      header: 'Повышенный комфорт',
+      image: 'img/info-03.jpg',
+      items: [
+        { header: 'Панорамная крыша с люком', text: '' },
+        { header: 'Зимний пакет', text: 'В жизни стоит наслаждаться каждым моментом, в том числе и в моментом посадки в машину. Логотип EXEED, проецируемый на землю словно говорит: «Добро пожаловать в твою личную зону превосходства». ' },
+        { header: 'Сиденья с микроклиматом и памятью положения', text: '' },
+        { header: 'Функциональный багажник', text: '' },
+        { header: 'Просторный салон', text: '' },
+      ]
+    },
+    {
+      id: 'safety',
+      header: 'Комплексная безопасность',
+      image: 'img/info-04.jpg',
+      items: [
+        { header: 'Полный привод', text: '' },
+        { header: 'Ассистент движения в полосе', text: 'Обновленный TXL с системой удержания в полосе (LKA) всегда готов подстраховать в опасной ситуации.' },
+        { header: 'Система безопасного выхода', text: '' },
+        { header: 'Помощь при спуске и на подъеме', text: '' },
+      ]
+    },
+    {
+      id: 'quality',
+      header: 'Высокое качество',
+      image: 'img/info-05.jpg',
+      items: [
+        { header: 'Семилетняя гарантия', text: 'Гарантия на кроссовер составляет 7 лет или 200 тысяч километров, в зависимости от того, что наступит раньше.' },
+        { header: 'Антикоррозийная защита', text: '' },
+      ]
+    },
+  ]
+
+.info#info
+  .info-items
+    each item in info
+      .info__item(id=item.id)
+        .info__item-half.info__item-image-part
+          img.info__item-image(src=item.image, alt="")
+        .info__item-half.info__item-text-part
+          h2.info__item-header !{item.header}
+          .info-accordion.accordion
+            each i in item.items
+              .info-accordion__item
+                .info-accordion__item-head #[span !{i.header}]
+                .info-accordion__item-body !{i.text}

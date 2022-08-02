@@ -1,0 +1,10 @@
+.modal.modal_testdrive.mfp-hide#callback
+  h2.testdrive__header !{testdrive.header}
+  form.testdrive-form
+    input(type="hidden" name="act" value="callback")
+    input.testdrive-form__input.testdrive-form__name(type="text" name="name" placeholder="Ваше имя")
+    input.testdrive-form__input.testdrive-form__phone(type="text" name="phone" placeholder="Телефон *" required)
+    label.testdrive-form__privacy
+      input(type="checkbox" required)
+      span Я согласен с #[a(href="#") условиями обработки персональных данных]
+    button.testdrive-form__button.btn.btn_light(type="submit") записаться

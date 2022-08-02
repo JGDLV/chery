@@ -1,0 +1,31 @@
+-
+  var car = {
+    header: 'стремление к большему',
+    subheader: 'Среднеразмерный кроссовер exeed txl',
+    image: 'img/car.png',
+    props: {
+      power: '186',
+      torque: '253',
+      racing: '9.8',
+      fuel: '7.6',
+    }
+  }
+
+.car#car
+  .container
+    h2.car__header !{car.header}
+    p.car__subheader.subheader !{car.subheader}
+    img.car__image(src=car.image, alt="")
+    .models-props
+      .models__prop.models__prop-power
+        p.models__prop-value #[span.counter !{car.props.power}]
+        p.models__prop-name Мощность, л.с.
+      .models__prop.models__prop-torque
+        p.models__prop-value #[span.counter !{car.props.torque}]
+        p.models__prop-name Крутящий момент, Н•м
+      .models__prop.models__prop-racing
+        p.models__prop-value #[span.counter !{car.props.racing}]
+        p.models__prop-name Разгон до 100 км/ч, с
+      .models__prop.models__prop-fuel
+        p.models__prop-value #[span.counter !{car.props.fuel}]
+        p.models__prop-name Расход топлива, л/100 км

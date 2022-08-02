@@ -1,0 +1,21 @@
+-
+  var intro = {
+    header: 'встречайте новые <span>exeed txl и VX</span>',
+    button: '#models'
+  }
+
+  var txl = {
+    header: 'Born for more <span>exeed txl</span>',
+    button: { href: '#callback', text: 'пройти тест-драйв' }
+  }
+
+if name == 'TXL'
+  .intro#intro(style="background-image: url('img/intro-bg-txl.jpg');")
+    .container
+      h1.intro__header.intro__header_light !{txl.header}
+      a.intro__button.btn.btn_light(href=txl.button.href) !{txl.button.text}
+else
+  .intro#intro(style="background-image: url('img/intro-bg.jpg');")
+    .container
+      h1.intro__header !{intro.header}
+      a.intro__goto.goto(href=intro.button)

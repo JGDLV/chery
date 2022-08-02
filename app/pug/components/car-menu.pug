@@ -1,0 +1,21 @@
+-
+  var carMenu = {
+    header: 'exeed txl',
+    items: [
+      { href: '#design', text: 'Дизайн' },
+      { href: '#technologies', text: 'Технологии' },
+      { href: '#comfort', text: 'Комфорт' },
+      { href: '#safety', text: 'безопасность' },
+      { href: '#quality', text: 'качество' },
+      { href: '#gallery', text: 'галерея' },
+    ],
+  }
+
+.car-menu#car-menu
+  .container
+    .car-menu__inner.flex.aic
+      h2.car-menu__header !{carMenu.header}
+      ul.car-menu-items.flex.aic
+        each item in carMenu.items
+          li.car-menu__item
+            a.car-menu__link.goto(href=item.href) !{item.text}

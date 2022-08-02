@@ -1,0 +1,18 @@
+-
+  var contacts = {
+    header: 'CHERY ЦЕНТР <br>АВТО ПРЕМИУМ',
+    button: { href: '#', text: 'получить предложение' }
+  }
+
+.contacts#contacts
+  .map#map
+    //- img(src="../img/map.jpg", alt="")
+    //- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A55f74ad8f07763c22360f73b88034d6e480370c243bc70c90d9c8ae42d1eb6cf&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>
+  .container
+    .contacts__inner
+      h2.contacts__header !{contacts.header}
+      p.contacts__prop.contacts__address !{header.address}
+      a.contacts__prop.contacts__phone(href="tel:+" + clearPhone(header.phone)) !{header.phone}
+      p.contacts__prop.contacts__whours !{header.whours}
+      a.contacts__prop.contacts__email(href="mailto:" + header.email) !{header.email}
+      a.contacts__button.btn.btn_dark(href=contacts.button.href) !{contacts.button.text}

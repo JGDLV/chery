@@ -1,0 +1,62 @@
+-
+  var clearPhone = function(x) {
+    return x.replace(/\D/g, '');
+  }
+
+  var header = {
+    logo: 'img/logo.png',
+    tagline: 'Chery центр авто премиум',
+    menu: [
+      { href: '#', text: 'txl fl' },
+      { href: '#', text: 'vx' },
+      { href: '#', text: 'о бренде' },
+      { href: '#', text: 'личный кабинет' },
+      { href: '#', text: 'получить предложение' },
+    ],
+    phone: '+7 (3952) 20-10-40',
+    address: 'г. Иркутск, ул. Старо-Кузьмихинская, 80',
+    whours: 'пн-вс с 9-00 до 20-00',
+    email: 'chery-admin@kuzmiha.ru',
+    location: '#',
+    login: '#'
+  }
+
+header.header.flex.aic
+  include header/logo.pug
+  include header/tagline.pug
+  .menu
+    ul.menu-items.flex
+      each item, index in header.menu
+        if index <= 2
+          li.menu__item
+            a.menu__link(href=item.href) !{item.text}
+  a.phone(href="tel:+" + clearPhone(header.phone)) !{header.phone}
+  .header-links.flex
+    .header-links__item
+      a.header__link.header__link-location(href=header.location)
+        svg
+          use(xlink:href="img/sprite.svg#location")
+    .header-links__item
+      a.header__link.header__link-login(href=header.login)
+        svg
+          use(xlink:href="img/sprite.svg#login")
+
+.header-mobile
+  .header-mobile__top.flex.aic
+    include header/logo.pug
+    include header/mobile-menu.pug
+  .header-mobile__middle
+    .menu
+      ul.menu-items.flex
+        each item, index in header.menu
+          if index <= 2
+            li.menu__item
+              a.menu__link(href=item.href) !{item.text}
+  .header-mobile__bottom.flex.aic.jcsb
+    a.phone(href="tel:+" + clearPhone(header.phone)) !{header.phone}
+      svg.phone__image
+        use(xlink:href="img/sprite.svg#phone-white")
+    include header/tagline.pug
+    a.header__link.header__link-location(href=header.location)
+      svg
+        use(xlink:href="img/sprite.svg#location")

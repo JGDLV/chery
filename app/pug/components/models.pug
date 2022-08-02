@@ -1,0 +1,43 @@
+-
+  var models = [
+    {
+      name: 'txl fl',
+      type: 'Среднеразмерный кроссовер',
+      image: 'img/txl.png',
+      power: '186',
+      torque: '253',
+      racing: '9.8',
+      fuel: '7.6'
+    },
+    {
+      name: 'vx',
+      type: 'Полноразмерный внедорожник',
+      image: 'img/vx.png',
+      power: '235',
+      torque: '390',
+      racing: '9.5',
+      fuel: '8.5'
+    },
+  ]
+
+.models#models
+  .container
+    .models-items
+      each item in models
+        .models__item
+          p.models__item-name !{item.name}
+          p.models__item-type !{item.type}
+          img.models__item-image(src=item.image, alt=item.name)
+          .models-props
+            .models__prop.models__prop-power
+              p.models__prop-value #[span.counter !{item.power}]
+              p.models__prop-name Мощность, л.с.
+            .models__prop.models__prop-torque
+              p.models__prop-value #[span.counter !{item.torque}]
+              p.models__prop-name Крутящий момент, Н•м
+            .models__prop.models__prop-racing
+              p.models__prop-value #[span.counter !{item.racing}]
+              p.models__prop-name Разгон до 100 км/ч, с
+            .models__prop.models__prop-fuel
+              p.models__prop-value #[span.counter !{item.fuel}]
+              p.models__prop-name Расход топлива, л/100 км

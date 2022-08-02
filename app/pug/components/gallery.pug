@@ -1,0 +1,20 @@
+-
+  var gallery = {
+    header: 'галерея',
+    items: [
+      { image: 'img/gallery-01.jpg' },
+      { image: 'img/gallery-02.jpg' },
+      { image: 'img/gallery-03.jpg' },
+      { image: 'img/gallery-04.jpg' },
+      { image: 'img/gallery-05.jpg' },
+      { image: 'img/gallery-06.jpg' },
+    ]
+  }
+
+.gallery#gallery
+  .container
+    h2.gallery__header !{gallery.header}
+  .gallery-items
+    each item in gallery.items
+      a.gallery__item(href=item.image)
+        img.gallery__item-image(src=item.image, alt="")
