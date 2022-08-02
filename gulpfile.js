@@ -136,5 +136,5 @@ function startwatch() {
 	watch('app/img/sprite/*.svg', svg);
 }
 
-exports.build = series(clear, images, html, styles, copy)
+exports.build = series(clear, html, styles, copy)
 exports.default = series(html, parallel(css, js, styles, png, svg, browsersync, startwatch))
